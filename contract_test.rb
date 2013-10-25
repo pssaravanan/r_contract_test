@@ -17,12 +17,15 @@ def schema_file schema_name
   "#{File.dirname(__FILE__)}/json_schema/#{schema_name}.json"
 end
 
-end_points.each do |scenario|
+not_matching_end_points = end_points.select do |scenario|
   json_data = get_json scenario["url"]
   schema_file = schema_file(scenario["schema"])
   errors = JSON::Validator.fully_validate(schema_file, json_data)
   p "URL:#{scenario['url']}"
   errors.each{|err| p err}
   p "*"*100
+  errors.length > 0
 end
+
+Process.exit(128) if not_matching_end_points.length > 0
 
