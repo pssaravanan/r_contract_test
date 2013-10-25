@@ -154,7 +154,10 @@
                     "id":"http://jsonschema.net/dc_result/velocity_in_packages",
                     "required":false,
                     "items":{
-                        "type":"null",
+                        "type":[
+                            "number",
+                            "null"
+                        ],
                         "id":"http://jsonschema.net/dc_result/velocity_in_packages/0",
                         "required":false
                     }
@@ -164,7 +167,10 @@
                     "id":"http://jsonschema.net/dc_result/velocity_in_weight",
                     "required":false,
                     "items":{
-                        "type":"null",
+                        "type":[
+                            "number",
+                            "null"
+                        ],
                         "id":"http://jsonschema.net/dc_result/velocity_in_weight/0",
                         "required":false
                     }
@@ -859,7 +865,10 @@
                     "id":"http://jsonschema.net/store_result/promo_velocity",
                     "required":false,
                     "items":{
-                        "type":"number",
+                        "type":[
+                            "number",
+                            "null"
+                        ],
                         "id":"http://jsonschema.net/store_result/promo_velocity/0",
                         "required":false
                     }
@@ -889,7 +898,10 @@
                     "id":"http://jsonschema.net/store_result/week_cover",
                     "required":false,
                     "items":{
-                        "type":"number",
+                        "type":[
+                            "number",
+                            "null"
+                        ],
                         "id":"http://jsonschema.net/store_result/week_cover/0",
                         "required":false
                     }
