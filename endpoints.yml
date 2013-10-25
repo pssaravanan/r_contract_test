@@ -1,0 +1,3 @@
+- scenario
+  schema: "article_replenishment"
+  url: "http://172.16.20.210/custom/article_replenishment?article_id=3153721"
