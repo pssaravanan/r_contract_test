@@ -21,6 +21,8 @@ end_points.each do |scenario|
   json_data = get_json scenario["url"]
   schema_file = schema_file(scenario["schema"])
   errors = JSON::Validator.fully_validate(schema_file, json_data)
-  p errors
+  p "URL:#{scenario['url']}"
+  errors.each{|err| p err}
+  p "*"*100
 end
 

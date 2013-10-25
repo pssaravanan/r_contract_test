@@ -1,2 +1,4 @@
 - schema: "article_replenishment"
   url: "http://172.16.20.210/custom/article_replenishment?article_id=3153721"
+- schema: "sub_category"
+  url: "http://172.16.20.210/custom/sub_category?sub_category_id=7002&start_yw=201301&end_yw=201340"
