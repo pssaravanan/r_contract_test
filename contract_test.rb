@@ -6,6 +6,7 @@ require 'json-schema'
 
 end_point_file = "#{File.dirname(__FILE__)}/endpoints.yml"
 end_points = YAML.load_file(end_point_file)
+host = ARGV.first
 
 def get_json url
   uri = URI.parse(url)
@@ -18,10 +19,11 @@ def schema_file schema_name
 end
 
 not_matching_end_points = end_points.select do |scenario|
-  json_data = get_json scenario["url"]
+  url = "#{host}#{scenario["url"]}"
+  json_data = get_json url
   schema_file = schema_file(scenario["schema"])
   errors = JSON::Validator.fully_validate(schema_file, json_data)
-  p "URL:#{scenario['url']}"
+  p "URL:#{url}"
   errors.each{|err| p err}
   p "*"*100
   errors.length > 0
